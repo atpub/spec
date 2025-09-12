@@ -1,2 +1,29 @@
 title: ATpub Identity Claim
 type: object
+additionalProperties: false
+required:
+  - $type
+  - identifier
+  - service
+properties:
+  $type:
+    type: string
+    const: me.atpub.identity.claim
+  identifier:
+    type: string
+  service:
+    oneOf:
+      - type: string
+      - type: object
+  proofs:
+    type: array
+    items:
+      type: object
+      additionalProperties: false
+      required:
+        - method
+      properties:
+        method:
+          type: string
+  createdAt:
+    type: string

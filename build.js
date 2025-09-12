@@ -30,6 +30,15 @@ async function build () {
     } catch {}
 
     await fs.mkdir(OUT_DIR)
+
+    // create separated schema files
+    await fs.mkdir(path.join(OUT_DIR, 'schema'))
+    for (const [schemaName, schema] of Object.entries(bundle.schema)) {
+        const schemaFn = path.join(OUT_DIR, 'schema', `${schemaName}.json`)
+        await fs.writeFile(schemaFn, JSON.stringify(schema, null, 2))
+        console.log(`Writed: ${schemaFn}`)
+    }
+
     const indexFn = path.join(OUT_DIR, 'index.json')
     await fs.writeFile(indexFn, JSON.stringify(bundle, null, 2))
     console.log(`Writed: ${indexFn}`)

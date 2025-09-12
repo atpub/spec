@@ -1,4 +1,4 @@
-- name: Basic Service
+- title: Basic Services
   item:
     $type: me.atpub.identity.claim
     name: Custom GitHub
