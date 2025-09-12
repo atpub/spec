@@ -1,0 +1,11 @@
+- name: Basic Service
+  item:
+    $type: me.atpub.identity.claim
+    name: Custom GitHub
+    verificationMethods:
+      profile:
+        type: http
+        url: "https://api.github.com/users/{claim.identifier}"
+        format: json
+        path: "$.bio"
+        needProxy: true
