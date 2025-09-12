@@ -1,20 +1,48 @@
 - title: Claim without proof
   item:
     $type: me.atpub.identity.claim
-    identifier: my-username
-    service: my-service
+    identifier: atpub.me
+    service: bsky
     createdAt: 2025-09-12T02:05:00.017Z
 
-- title: Claim with proof
+- title: Claim without proof (inline service)
+  item:
+    $type: me.atpub.identity.claim
+    identifier: atpub
+    service:
+      name: ATpub
+    createdAt: 2025-09-12T02:05:00.017Z
+
+- title: Claim without proof (remote service)
   item:
     $type: me.atpub.identity.claim
     identifier: my-username
-    service: my-service
+    service: tree.fail#test-service
+    createdAt: 2025-09-12T02:05:00.017Z
+
+- title: Claim with proof (dns)
+  params:
+    did: did:plc:mm2qkv2rroigo4y4xa37ib2e
+  item:
+    $type: me.atpub.identity.claim
+    identifier: atpub.me
+    service: dns
+    proofs:
+      - method: txt
+    createdAt: 2025-09-12T02:05:00.017Z
+
+- title: Claim with proof (github)
+  params:
+    did: did:plc:mm2qkv2rroigo4y4xa37ib2e
+  item:
+    $type: me.atpub.identity.claim
+    identifier: atpub
+    service: github
     proofs:
       - method: profile
     createdAt: 2025-09-12T02:05:00.017Z
 
-- title: Claim with inline service
+- title: Claim with proof (inline service)
   item:
     $type: me.atpub.identity.claim
     identifier: atpub
