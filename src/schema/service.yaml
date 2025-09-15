@@ -2,7 +2,7 @@ $id: https://spec.atpub.me/schema/service.json
 title: ATpub Services
 type: object
 additionalProperties: false
-require:
+required:
   - $type
   - name
 properties:
