@@ -1,46 +1,47 @@
 - title: Claim without proof
   item:
     $type: me.atpub.identity.claim
-    identifier: atpub.me
+    did: did:plc:mm2qkv2rroigo4y4xa37ib2e
     service: bsky
+    identifier: atpub.me
     createdAt: 2025-09-12T02:05:00.017Z
 
 - title: Claim without proof (inline service)
   item:
     $type: me.atpub.identity.claim
-    identifier: atpub
+    did: did:plc:mm2qkv2rroigo4y4xa37ib2e
     service:
       name: ATpub
       profileUrlTemplate: 'https://my-custom-url/{identifier}'
       identifier:
         renderFormat: '#{identifier}'
+    identifier: atpub
     createdAt: 2025-09-12T02:05:00.017Z
 
 - title: Claim without proof (remote service)
   item:
     $type: me.atpub.identity.claim
+    did: did:plc:mm2qkv2rroigo4y4xa37ib2e
+    service: test-service@atpub.me
     identifier: my-username
-    service: tree.fail#test-service
     createdAt: 2025-09-12T02:05:00.017Z
 
 - title: Claim with proof (dns)
-  params:
-    did: did:plc:mm2qkv2rroigo4y4xa37ib2e
   item:
     $type: me.atpub.identity.claim
+    did: did:plc:mm2qkv2rroigo4y4xa37ib2e    
+    service: dns    
     identifier: atpub.me
-    service: dns
     proofs:
       - method: txt
     createdAt: 2025-09-12T02:05:00.017Z
 
 - title: Claim with proof (github)
-  params:
-    did: did:plc:mm2qkv2rroigo4y4xa37ib2e
   item:
     $type: me.atpub.identity.claim
-    identifier: atpub
+    did: did:plc:mm2qkv2rroigo4y4xa37ib2e    
     service: github
+    identifier: atpub
     proofs:
       - method: profile
     createdAt: 2025-09-12T02:05:00.017Z
@@ -48,7 +49,7 @@
 - title: Claim with proof (inline service)
   item:
     $type: me.atpub.identity.claim
-    identifier: atpub
+    did: did:plc:mm2qkv2rroigo4y4xa37ib2e
     service:
       name: Custom GitHub
       verificationMethods:
@@ -58,6 +59,7 @@
           format: json
           path: "$.bio"
           needProxy: true
+    identifier: atpub
     proofs: 
       - method: profile
     createdAt: 2025-09-12T02:05:00.017Z

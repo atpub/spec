@@ -2,10 +2,13 @@ $id: https://spec.atpub.me/schema/service.json
 title: ATpub Services
 type: object
 additionalProperties: false
+require:
+  - $type
+  - name
 properties:
   $type:
     type: string
-    const: me.atpub.registry.service
+    const: me.atpub.identity.service
   name:
     type: string
   homepage:

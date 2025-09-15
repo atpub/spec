@@ -4,18 +4,21 @@ type: object
 additionalProperties: false
 required:
   - $type
-  - identifier
+  - did
   - service
+  - identifier  
 properties:
   $type:
     type: string
     const: me.atpub.identity.claim
-  identifier:
+  did:
     type: string
   service:
     anyOf:
       - type: string
       - $ref: "https://spec.atpub.me/schema/service.json"
+  identifier:
+    type: string
   proofs:
     type: array
     items:
